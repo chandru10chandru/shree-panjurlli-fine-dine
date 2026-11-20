@@ -301,3 +301,312 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
 }
 
+/* --------------------------------------------------------------------------
+   5.5. SITE INTRO & SHINING LOGO MOTION (3-4s Brand Experience)
+   -------------------------------------------------------------------------- */
+.site-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #0c0b09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, visibility;
+}
+
+.site-intro-overlay.dismissed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+body.intro-active {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+.intro-backdrop-ambience {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 45%, rgba(200, 151, 72, 0.16) 0%, rgba(14, 13, 11, 0.88) 55%, #0c0b09 100%),
+    repeating-linear-gradient(45deg, rgba(200, 151, 72, 0.015) 0px, rgba(200, 151, 72, 0.015) 2px, transparent 2px, transparent 16px);
+  pointer-events: none;
+  animation: introBgPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes introBgPulse {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+.intro-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 580px;
+  width: 100%;
+}
+
+/* Crest & Logo with Shining Motion */
+.intro-crest-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-crest-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(200, 151, 72, 0.45);
+  animation: introRotateRing 26s linear infinite;
+}
+
+.intro-crest-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 151, 72, 0.45) 0%, transparent 70%);
+  filter: blur(14px);
+  animation: introGlowBreathe 3s ease-in-out infinite alternate;
+}
+
+.intro-crest-box {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-amber-gold);
+  box-shadow: 0 0 35px rgba(200, 151, 72, 0.38), inset 0 0 20px rgba(0, 0, 0, 0.85);
+  background-color: #12100d;
+}
+
+.intro-crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Specular shining sweep over logo */
+.intro-shimmer-sweep {
+  position: absolute;
+  top: -60%;
+  left: -130%;
+  width: 90%;
+  height: 220%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 248, 225, 0.95) 50%,
+    rgba(255, 255, 255, 0.25) 65%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: introShineOverLogo 2.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes introShineOverLogo {
+  0% {
+    left: -130%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  48% {
+    left: 140%;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    left: 140%;
+    opacity: 0;
+  }
+}
+
+@keyframes introRotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes introGlowBreathe {
+  0% { transform: scale(0.92); opacity: 0.45; }
+  100% { transform: scale(1.15); opacity: 0.85; }
+}
+
+/* Brand Details */
+.intro-brand-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.intro-kannada {
+  font-family: var(--font-kannada);
+  font-size: 1.15rem;
+  color: var(--color-amber-gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 0.25s forwards ease-out;
+}
+
+.intro-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0.75rem;
+}
+
+.intro-title-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5.2vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: linear-gradient(135deg, #ffffff 15%, #f7e7ce 45%, #c89748 75%, #ffdf79 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(200, 151, 72, 0.28);
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 0.45s forwards ease-out;
+}
+
+.intro-title-sub {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--color-amber-gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 0.65s forwards ease-out;
+}
+
+.intro-sub-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0.4rem 0 0.85rem;
+  color: var(--color-amber-gold);
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 0.8s forwards ease-out;
+}
+
+.intro-sub-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-amber-gold), transparent);
+}
+
+.intro-sub-star {
+  font-size: 0.8rem;
+  color: var(--color-amber-gold);
+}
+
+.intro-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #ded8cb;
+  margin: 0 0 0.25rem;
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 0.95s forwards ease-out;
+}
+
+.intro-tradition {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 1.1s forwards ease-out;
+}
+
+@keyframes introFadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress track */
+.intro-progress-track {
+  width: 190px;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.intro-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c89748, #ffd700);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+  transition: width 3.2s cubic-bezier(0.12, 0.45, 0.2, 1);
+}
+
+/* Skip / Enter button */
+.intro-skip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(200, 151, 72, 0.08);
+  border: 1px solid rgba(200, 151, 72, 0.35);
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: introFadeSlideUp 0.8s 1.25s forwards ease-out;
+}
+
+.intro-skip-btn:hover {
+  color: var(--color-amber-gold);
+  border-color: var(--color-amber-gold);
+  background: rgba(200, 151, 72, 0.16);
+  transform: translateY(-1px);
+}
+
