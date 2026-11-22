@@ -900,3 +900,158 @@ body.intro-active {
   color: var(--text-primary);
 }
 
+/* --------------------------------------------------------------------------
+   8. BRAND & STORY SECTION: "A Dining Room with a Story"
+   -------------------------------------------------------------------------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.story-lead {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #dfd7c9;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  border-left: 2px solid var(--color-amber-gold);
+  padding-left: 1.25rem;
+}
+
+.story-text {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.story-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.story-feature-card {
+  padding: 1.25rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.story-feature-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-amber-gold);
+  margin-bottom: 0.6rem;
+}
+
+.story-feature-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.story-feature-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.story-media-stack {
+  position: relative;
+}
+
+.story-image-main {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-image-secondary {
+  position: absolute;
+  bottom: -2rem;
+  right: -1.5rem;
+  width: 58%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-canvas);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-tag-box {
+  position: absolute;
+  top: 1.5rem;
+  left: -1.5rem;
+  background: rgba(21, 19, 16, 0.95);
+  border: 1px solid var(--color-border);
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  max-width: 220px;
+}
+
+.story-tag-box h5 {
+  font-size: 0.82rem;
+  color: var(--color-amber-gold);
+  margin-bottom: 0.2rem;
+}
+
+.story-tag-box p {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Wall of Legends Special Banner */
+.legends-feature-banner {
+  margin-top: 5rem;
+  background: linear-gradient(135deg, #181512 0%, #1c1813 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.legends-content {
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.legends-img-wrap {
+  position: relative;
+  min-height: 320px;
+}
+
+.legends-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.legends-names-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.name-pill {
+  font-size: 0.76rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(200, 151, 72, 0.2);
+  border-radius: 999px;
+  color: var(--text-secondary);
+}
+
