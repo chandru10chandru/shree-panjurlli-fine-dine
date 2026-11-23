@@ -1217,3 +1217,164 @@ body.intro-active {
   color: var(--color-border);
 }
 
+/* Full Menu Area */
+.menu-controls {
+  margin-bottom: 2.5rem;
+}
+
+.menu-search-wrapper {
+  max-width: 440px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.menu-search-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all var(--transition-normal);
+}
+
+.menu-search-input:focus {
+  outline: none;
+  border-color: var(--color-amber-gold);
+  box-shadow: 0 0 0 3px var(--color-amber-gold-glow);
+}
+
+.menu-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  width: 18px;
+  height: 18px;
+}
+
+.menu-categories-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.menu-tab-btn {
+  padding: 0.6rem 1.15rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.menu-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(200, 151, 72, 0.4);
+}
+
+.menu-tab-btn.active {
+  background-color: var(--color-amber-gold);
+  color: #0b0a08;
+  border-color: var(--color-amber-gold);
+  font-weight: 600;
+}
+
+/* Physical Menu List Layout */
+.menu-booklet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.menu-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed rgba(200, 151, 72, 0.16);
+  position: relative;
+}
+
+.item-left {
+  max-width: 78%;
+}
+
+.item-name {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-kannada {
+  font-family: var(--font-kannada);
+  font-size: 0.78rem;
+  color: var(--color-amber-gold);
+  opacity: 0.8;
+}
+
+.item-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+.item-price {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-amber-gold);
+  white-space: nowrap;
+}
+
+.item-popular-badge {
+  font-size: 0.65rem;
+  background-color: rgba(200, 151, 72, 0.15);
+  border: 1px solid var(--color-border);
+  color: var(--color-amber-gold);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Original Menu Card Banner */
+.menu-cards-action-banner {
+  margin-top: 3.5rem;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.menu-card-preview-thumb {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.menu-card-preview-thumb img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
