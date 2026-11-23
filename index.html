@@ -368,6 +368,51 @@
     <!-- ========================================================================
          5. FULL INTERACTIVE MENU SECTION
          ======================================================================== -->
+    <section class="section section-dark" id="menu">
+      <div class="container">
+        <div class="section-label" style="display: flex; justify-content: center;">The Full Menu</div>
+        <h2 class="section-title" style="text-align: center;">Crafted with Authentic Ingredients</h2>
+        <p class="section-subtitle center">
+          Browse our complete selection of coastal seafood, clay tandoor roasts, Belagavi Savaji specialties, fragrant basmati dum biryanis, and refreshing beverages. All prices are verified from our official menu.
+        </p>
+
+        <!-- Menu Controls: Live Search & Category Tabs -->
+        <div class="menu-controls">
+          <div class="menu-search-wrapper">
+            <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="menu-search" class="menu-search-input" placeholder="Search dishes (e.g. Ghee Roast, Savaji, Surmai, Biryani, Roti)..." aria-label="Search dishes">
+          </div>
+
+          <div class="menu-categories-tabs" id="menu-category-tabs">
+            <!-- Tabs rendered by js/app.js -->
+          </div>
+        </div>
+
+        <!-- Menu Items List -->
+        <div class="menu-booklet-grid" id="menu-items-list">
+          <!-- Rendered by js/app.js -->
+        </div>
+
+        <!-- Banner for Original Physical Menu Cards -->
+        <div class="menu-cards-action-banner">
+          <div class="menu-card-preview-thumb">
+            <img src="images/menu-cards/shree-panjurlli-nonveg-menu.jpg" alt="Original menu card preview">
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Prefer viewing our printed menu?</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Inspect our actual printed Non-Veg and Veg general menu cards in full high-resolution.</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="open-physical-menu-btn">View Original Menu Cards</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. TABLE RESERVATION SYSTEM
+         ======================================================================== -->
 </main>
 </body>
 </html>
