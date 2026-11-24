@@ -413,6 +413,169 @@
     <!-- ========================================================================
          6. TABLE RESERVATION SYSTEM
          ======================================================================== -->
+    <section class="section section-elevated" id="reservation">
+      <div class="container">
+        <div class="reservation-wrapper">
+          <!-- Form Left Column -->
+          <div>
+            <div class="section-label">Table Enquiry</div>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 0.75rem;">Reserve a Table</h2>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 2rem;">
+              Plan your family gathering, birthday dinner, or special evening with us. Fill out your details below to send an enquiry directly to our reception via WhatsApp or call our desk.
+            </p>
+
+            <form class="reservation-form" id="reservation-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-name" class="form-label">Full Name *</label>
+                  <input type="text" id="res-name" class="form-control" placeholder="e.g. Ramesh Kulkarni" required>
+                </div>
+                <div class="form-group">
+                  <label for="res-phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="res-phone" class="form-control" placeholder="e.g. +91 98450 12345" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-date" class="form-label">Date *</label>
+                  <input type="date" id="res-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="res-time" class="form-label">Preferred Time *</label>
+                  <select id="res-time" class="form-control form-select" required>
+                    <option value="" disabled selected>Select dining time</option>
+                    <optgroup label="Lunch Service">
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="12:30 PM">12:30 PM</option>
+                      <option value="01:00 PM">01:00 PM</option>
+                      <option value="01:30 PM">01:30 PM</option>
+                      <option value="02:00 PM">02:00 PM</option>
+                      <option value="02:30 PM">02:30 PM</option>
+                    </optgroup>
+                    <optgroup label="Dinner Service">
+                      <option value="07:00 PM">07:00 PM</option>
+                      <option value="07:30 PM">07:30 PM</option>
+                      <option value="08:00 PM">08:00 PM</option>
+                      <option value="08:30 PM">08:30 PM</option>
+                      <option value="09:00 PM">09:00 PM</option>
+                      <option value="09:30 PM">09:30 PM</option>
+                      <option value="10:00 PM">10:00 PM</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-guests" class="form-label">Number of Guests</label>
+                  <select id="res-guests" class="form-control form-select">
+                    <option value="1 Guest">1 Guest</option>
+                    <option value="2 Guests" selected>2 Guests</option>
+                    <option value="3 to 4 Guests">3 to 4 Guests</option>
+                    <option value="5 to 6 Guests">5 to 6 Guests (Family Table)</option>
+                    <option value="7 to 10 Guests">7 to 10 Guests (Large Group)</option>
+                    <option value="10+ Guests">10+ Guests (Party Hall Enclosure)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="res-area" class="form-label">Seating Preference</label>
+                  <select id="res-area" class="form-control form-select">
+                    <option value="AC Family Hall" selected>AC Family Hall</option>
+                    <option value="Private Booth">Private Wooden Jaali Booth</option>
+                    <option value="Banquet Enclosure">Banquet / Party Enclosure</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-occasion" class="form-label">Occasion</label>
+                <select id="res-occasion" class="form-control form-select">
+                  <option value="Family Dinner" selected>Family Gathering / Dinner</option>
+                  <option value="Birthday Celebration">Birthday Celebration</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Business Dinner">Business Dinner</option>
+                  <option value="Casual Dining">Casual Dining</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-requests" class="form-label">Special Requests (Optional)</label>
+                <textarea id="res-requests" class="form-control" rows="2" placeholder="e.g. High chair needed for child, quiet corner table, celebration cake arrangement..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+                Request a Table
+              </button>
+            </form>
+          </div>
+
+          <!-- Info Right Column -->
+          <div class="reservation-info-card">
+            <div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-amber-gold);">
+                Reservation Guidelines
+              </h3>
+
+              <div class="info-bullet">
+                <svg class="info-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <div class="info-bullet-text">
+                  <h5>Prompt Table Confirmation</h5>
+                  <p>Submitting an enquiry pre-formats a direct request for our floor manager. We will confirm your table based on immediate seating availability.</p>
+                </div>
+              </div>
+
+              <div class="info-bullet">
+                <svg class="info-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="16" y1="14" x2="16" y2="18"></line>
+                  <path d="M16 10h.01"></path>
+                  <path d="M12 10h.01"></path>
+                  <path d="M8 10h.01"></path>
+                  <path d="M12 14h.01"></path>
+                  <path d="M8 14h.01"></path>
+                  <path d="M12 18h.01"></path>
+                  <path d="M8 18h.01"></path>
+                </svg>
+                <div class="info-bullet-text">
+                  <h5>Dedicated Party & Event Hall</h5>
+                  <p>Planning a birthday, anniversary, or corporate event for 20+ guests? Our attached banquet hall is equipped for private catering and gatherings.</p>
+                </div>
+              </div>
+
+              <div class="info-bullet">
+                <svg class="info-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                  <circle cx="7" cy="17" r="2"></circle>
+                  <circle cx="17" cy="17" r="2"></circle>
+                </svg>
+                <div class="info-bullet-text">
+                  <h5>Dedicated Customer Parking</h5>
+                  <p>Hassle-free parking for your vehicle right in front of Kuber Plaza off Khanapur Road.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Phone Booking Callout -->
+            <div class="phone-reservation-box">
+              <h5>Prefer to call directly?</h5>
+              <a href="tel:+918314203773" class="phone-hotline">+91 831 420 3773</a>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Desk Helpline: +91 91410 93360</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. SOCIAL PROOF & REVIEWS: "Loved by Belagavi"
+         ======================================================================== -->
 </main>
   <!-- ========================================================================
        12. MODALS
