@@ -1378,3 +1378,136 @@ body.intro-active {
   border: 1px solid var(--color-border);
 }
 
+/* --------------------------------------------------------------------------
+   10. TABLE RESERVATION SYSTEM (Major Conversion Engine)
+   -------------------------------------------------------------------------- */
+.reservation-wrapper {
+  background: linear-gradient(145deg, #181512 0%, #12100d 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 5vw, 4rem);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-amber-gold);
+  box-shadow: 0 0 0 2px var(--color-amber-gold-glow);
+  background-color: var(--color-surface);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C89748' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.reservation-info-card {
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-bullet {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-bullet-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-amber-gold);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.info-bullet-text h5 {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.info-bullet-text p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.phone-reservation-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(200, 151, 72, 0.08);
+  border: 1px solid rgba(200, 151, 72, 0.3);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.phone-reservation-box h5 {
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-amber-gold);
+  margin-bottom: 0.5rem;
+}
+
+.phone-hotline {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.phone-hotline:hover {
+  color: var(--color-amber-gold);
+}
+
