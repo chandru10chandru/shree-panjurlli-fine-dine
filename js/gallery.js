@@ -103,5 +103,108 @@ export function initGallery() {
   const container = document.getElementById('gallery-masonry-container');
   const tabs = document.querySelectorAll('.gallery-tab-btn');
   const lightbox = document.getElementById('gallery-lightbox-modal');
-  const lightboxImg = document.getElementB
+  const lightboxImg = document.getElementById('lightbox-image');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxSub = document.getElementById('lightbox-sub');
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  const prevBtn = document.getElementById('lightbox-prev-btn');
+  const nextBtn = document.getElementById('lightbox-next-btn');
+
+  let currentCategory = 'all';
+  let activeList = [...GALLERY_ITEMS];
+  let currentIndex = 0;
+
+  function renderGallery(items) {
+    if (!container) return;
+    container.innerHTML = items.map((item, index) => `
+      <div class="gallery-item ${item.spanClass}" data-index="${index}">
+        <img src="${item.src}" alt="${item.title}" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <h4 class="gallery-caption-title">${item.title}</h4>
+            <p class="gallery-caption-sub">${item.subtitle}</p>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Attach click handlers
+    container.querySelectorAll('.gallery-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.getAttribute('data-index'), 10);
+        openLightbox(idx);
+      });
+    });
+  }
+
+  function filterGallery(category) {
+    currentCategory = category;
+    if (category === 'all') {
+      activeList = [...GALLERY_ITEMS];
+    } else {
+      activeList = GALLERY_ITEMS.filter(it => it.category === category);
+    }
+    renderGallery(activeList);
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !activeList[index]) return;
+    currentIndex = index;
+    updateLightboxContent();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxContent() {
+    const item = activeList[currentIndex];
+    if (!item) return;
+    if (lightboxImg) lightboxImg.src = item.src;
+    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxSub) lightboxSub.textContent = item.subtitle;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + activeList.length) % activeList.length;
+    updateLightboxContent();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % activeList.length;
+    updateLightboxContent();
+  }
+
+  // Event Listeners
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      filterGallery(tab.getAttribute('data-cat') || 'all');
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', showPrev);
+  if (nextBtn) nextBtn.addEventListener('click', showNext);
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Initial render
+  renderGallery(activeList);
 }
